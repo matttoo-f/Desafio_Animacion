@@ -1,0 +1,389 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+body {
+    font-family: 'Montserrat';
+    color: rgb(238, 200, 147);
+}
+/* CONTAINER-------------------------------------------------------------------------- */
+.container {
+    display: grid;
+    grid-template-areas: "header" "sidebar" "main" "ads" "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 4em 4em 1fr 4em 4em;
+    height: 100vh;
+}
+/* MEDIA QUERIES CONTAINER PANTALLA MEDIA */
+@media (min-width: 576px) {
+    .container {
+        display: grid;
+        grid-template-areas: "header header header" "sidebar main main" "ads ads footer ";
+        grid-template-columns: 10em 1fr 10em;
+        grid-template-rows: 4em 1fr 8em;
+    }
+}
+/* MEDIA QUERIES CONTAINER PANTALLA ESCRITORIO */
+@media (min-width:900px) {
+    .container{
+        display: grid;
+        grid-template-areas: "header header header" "sidebar main ads" "footer footer footer";
+        grid-template-columns: 10em 1fr 10em;
+        grid-template-rows: 4em 1fr 7em;
+
+    }
+    
+}
+/* HEADER------------------------------------------------------------------------- */
+header {
+    grid-area: header;
+    background-color: rgb(49, 1, 94);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box1 {
+    height: 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+}
+.logo {
+    text-decoration: none;
+    color: tomato;
+    font-family: 'style script';
+    font-size: 30px;
+    animation: pulse 5s infinite;
+    transition: all 0.5s;
+}
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.05);}
+    100% {transform: scale(1);}
+}
+.logo:hover {
+    color: aqua;
+}
+.change-color {
+    color: aqua;
+    transition: all 0.5s;
+}
+.change-color:hover {
+    color: tomato;
+}
+.navbar {
+    display: none;
+    gap: 20px;
+}
+.navbar li {
+    list-style: none;
+}
+.navbar a {
+    text-decoration: none;
+    color: rgb(238, 200, 147);
+    transition: all 0.3s ease-in;
+}
+.navbar a:hover{
+    color: rgb(248, 221, 217);
+    background-color: rgb(243, 248, 253, 50%);
+    box-shadow: 0 0 20px aliceblue;
+    border-radius: 5px;
+}
+
+.btn-nav {
+    text-decoration: none;
+    color: rgb(238, 200, 147);
+    transform: rotate(90deg);
+    border: 0.5px solid;
+    margin: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+}
+.btn-nav:hover{
+    background-color: tomato;
+    color: rgb(255, 240, 198);
+    box-shadow: 0 0 10px aliceblue;
+}
+/* MEDIA QUERIES HEADER PANTALLA MEDIANA */
+@media (min-width:576px) {
+    .navbar {
+        display: flex;
+        margin-right: 10px;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .btn-nav {
+        display: none;
+    }
+}
+/* MEDIA QUERIES HEADER PANTALLA ESCRITORIO */
+@media (min-width:900px) {
+    .navbar {
+        display: flex;
+        margin-right: 10px;
+        width: 100%;
+        justify-content: end;
+        gap: 40px;
+    }
+}
+/* SIDEBAR-------------------------------------------------- */
+.sidebar {
+    grid-area: sidebar;
+    background-color: rgb(28, 1, 71);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box2 {
+    height: 3em;
+    display: flex;
+    align-items: center;
+    width: 98%;
+}
+.nav-side {
+    height: 3em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.nav-side li {
+    list-style: none;
+}
+.nav-side a {
+    text-decoration: none;
+    color:tomato;
+}
+.link-side {
+    border: 0.5px solid;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease-out;
+}
+.link-side:hover {
+    background-color: tomato;
+    color: rgb(248, 196, 133);
+    box-shadow: 0 0 10px rgb(248, 196, 133);
+}
+
+/* MEDIA QUERIES SIDEBAR PANTALLA MEDIA */
+@media (min-width:576px) {
+    .sidebar {
+        grid-area: sidebar;
+        display: flex;
+        flex-direction: column;
+    }
+    .box2 {
+        display: flex;
+        height: 100%;
+    }
+    .nav-side {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding-top: 45px;
+        gap: 40px;
+        width: 100%;
+    }
+    .nav-side li {
+        list-style: none;
+        width: 100%;
+        padding-left: 10px;
+    }
+    .nav-side a {
+        text-decoration: none;
+        color: tomato;
+        padding: 10px;
+        border: 0.5px solid;
+    }
+}
+
+/* MAIN----------------------------------------------------- */
+main {
+    grid-area: main;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+.box3 {
+    width: 100%;
+    background-color: tomato;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h3 {
+    padding-top: 10px;
+    font-family: 'montserrat';
+    font-size: 20px;
+    padding-bottom: 5px;
+    color: white;
+}
+main h4 {
+    color: aqua;
+}
+.card-cont {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    flex-direction: column;
+    gap: 20px;
+}
+.card {
+    flex: 0 0 calc(100%-10px);
+    scroll-snap-align: start;
+    background-color: rgb(27, 2, 49);
+    height: 18em;
+    width: 20em;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 3px;
+    justify-content: space-around;
+    border: 0.5px solid;
+    text-align: center;
+    transition: all 0.3s;
+}
+.card:hover {
+    transform: translatex(5px);
+    background-color: rgb(64, 14, 109);
+    box-shadow:0 0 5px rgb(27, 2, 49);
+}
+.card p {
+    font-size: 13px;
+}
+.img-card {
+    width: 95%;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+
+/* MEDIA QUERIES MAIN PANTALLA MEDIA */
+
+@media (min-width:576px) {
+    .box3 {
+        display: flex;
+        align-items: normal;
+    }
+    h3 {
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-bottom: 0%;
+    }
+    .card-cont {
+        margin: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        margin-bottom: 50px;
+        margin-top: 30px;
+    }
+}
+/* MEDIA QUERIES MAIN PANTALLA ESCRITORIO */
+@media (min-width:900px) {
+    .card-cont {
+        margin: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        margin-bottom: 75px;
+        margin-top: 50px;
+    }
+}
+
+/* ADS------------------------------------------------------ */
+.ads {
+    grid-area: ads;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5PX;
+}
+.box-ads {
+    background-color: rgb(247, 149, 131);
+    padding: 15px;
+    width: 35%;
+    border-radius: 10px;
+    height: 60%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.box-ads h4{
+    font-size: 20px;
+}
+/* MEDIA QUERIES ADS PANTALLA ESCRITORIO */
+@media (min-width:900px) {
+    .ads {
+        grid-area: ads;
+        background-color: blueviolet;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .box-ads {
+        width: 70%;
+        height: 40%;
+    }
+}
+/* FOOTER --------------------------------------------------*/
+footer {
+    grid-area: footer;
+    background-color: rgb(49, 1, 94);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.fa-brands {
+    font-size: 30px;
+    color: tomato;
+    transition: all 0.1S ease-out;
+}
+.fa-brands:hover{
+    border-radius: 50%;
+    box-shadow: 0 0 10px tomato;
+    transform: scale(1.1);
+}
+.copyright {
+    font-size: 14px;
+    text-align: center;
+    width: 50%;
+    color: tomato;
+}
+/* MEDIA QUERIES FOOTER PANTALLA MEDIA */
+
+@media (min-width:576px) {
+    footer {
+        padding: 5px;
+    }
+    .copyright {
+        font-size: 12px;
+    }    
+}
+/* MEDIA QUERIES FOOTER PANTALLA ESCRITORIO */
+@media (min-width:900px) {
+    .copyright{
+        font-size: 14px;
+    }
+    
+}
